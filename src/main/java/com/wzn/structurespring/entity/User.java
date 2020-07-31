@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
  * @author wei zhenning
  * @version 1.0
  * @datetime 2020-07-30 18:32
- * @description
+ * @description 用户对象
  */
 
 @Data

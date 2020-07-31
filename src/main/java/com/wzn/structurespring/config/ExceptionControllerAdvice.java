@@ -28,9 +28,10 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 public class ExceptionControllerAdvice {
 
     /**
+     * 全局异常拦截
      *
-     * @param e
-     * @return
+     * @param e 详细异常信息
+     * @return 码值及异常基本信息
      */
     @ExceptionHandler(APIException.class)
     public ResultVO<String> APIExceptionHandler(APIException e) {

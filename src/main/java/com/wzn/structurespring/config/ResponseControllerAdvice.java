@@ -16,10 +16,10 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
  * @author wei zhenning
  * @version 1.0
  * @datetime 2020-07-31 15:57
- * @description
+ * @description 正常响应全局拦截
  */
 
-@RestControllerAdvice(basePackages = {""})
+@RestControllerAdvice(basePackages = {"com.wzn.structurespring.controller"})
 public class ResponseControllerAdvice implements ResponseBodyAdvice<Object> {
     @Override
     public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> aClass) {
