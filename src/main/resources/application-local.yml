@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: structureSpring
+
+server:
+  port: 8989
