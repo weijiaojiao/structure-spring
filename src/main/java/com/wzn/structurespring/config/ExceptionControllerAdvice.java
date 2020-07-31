@@ -35,7 +35,7 @@ public class ExceptionControllerAdvice {
      */
     @ExceptionHandler(APIException.class)
     public ResultVO<String> APIExceptionHandler(APIException e) {
-        log.info("错误信息：",e);
+        //log.info("错误信息：",e);
         return new ResultVO<>(ResultCode.FAILED, e.getMsg());
     }
 
