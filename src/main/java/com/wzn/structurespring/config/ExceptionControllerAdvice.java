@@ -43,7 +43,7 @@ public class ExceptionControllerAdvice {
      * Valid校验参数异常信息抛出
      *
      * @param e 异常信息
-     * @return 异常信息巨土说明
+     * @return 异常信息说明
      */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResultVO<String> MethodArgumentNotValidExceptionHandler(MethodArgumentNotValidException e) {
