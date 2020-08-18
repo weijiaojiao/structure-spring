@@ -2,6 +2,7 @@ package com.wzn.structurespring.service;
 
 import com.wzn.structurespring.config.ProcessorConfig;
 import com.wzn.structurespring.exception.APIException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
  * @datetime 2020-08-17 18:17
  * @description
  */
+@Slf4j
 @Service
 public abstract class BaseProcessorService {
 
@@ -26,16 +28,16 @@ public abstract class BaseProcessorService {
 
     private void init(ProcessorConfig config) {
         isValid = config.status();
+        log.info("--------------------------"+" 初始化加载： "+config.value()+"--------------------------");
     }
 
     protected abstract void doValidate();
 
-    public String handle() {
+    public void handle() {
         if (!isValid) {
-            return "该service不执行";
+            System.out.println("该service不执行");
         }
         doValidate();
-        return "调用结束";
     }
 
 }
