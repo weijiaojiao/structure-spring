@@ -15,8 +15,13 @@ import org.springframework.stereotype.Service;
 public class ProcessorServiceThreeImpl extends BaseProcessorService {
 
     @Override
+<<<<<<< HEAD
     protected String doValidate() {
         return "ProcessorServiceThreeImpl";
+=======
+    protected void doValidate() {
+        System.out.println("ProcessorServiceThreeImpl");
+>>>>>>> parent of 53cae64... 无序公共流程加载
     }
 
 }

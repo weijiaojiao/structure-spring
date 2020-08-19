@@ -11,12 +11,17 @@ import org.springframework.stereotype.Service;
  * @description
  */
 @Service
-@ProcessorConfig(value = "ProcessorServiceOneImpl")
+@ProcessorConfig(value = "ProcessorServiceOneImpl",status = false)
 public class ProcessorServiceOneImpl extends BaseProcessorService {
 
     @Override
+<<<<<<< HEAD
     protected String doValidate() {
         return "ProcessorServiceOneImpl";
+=======
+    protected void doValidate() {
+        System.out.println("ProcessorServiceOneImpl");
+>>>>>>> parent of 53cae64... 无序公共流程加载
     }
 
 }
