@@ -12,11 +12,11 @@ import java.util.List;
  * @author wei zhenning
  * @version 1.0
  * @datetime 2020-08-17 18:09
- * @description
+ * @description 在程序启动时初始化加载配有@ProcessorConfig注解的service
  */
 public abstract class ProcessorManager<T> implements ApplicationContextAware {
 
-    protected List<T> processors = new ArrayList<>();
+    protected final List<T> processors = new ArrayList<>();
 
     @Getter(AccessLevel.PROTECTED)
     private ApplicationContext applicationContext;
