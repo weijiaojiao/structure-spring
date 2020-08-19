@@ -18,11 +18,31 @@
         <java.version>1.8</java.version>
     </properties>
 
+    <repositories><!-- 代码库 -->
+        <repository>
+            <id>maven-ali</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public//</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <dependencies>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 
         <dependency>
@@ -59,6 +79,19 @@
             <groupId>io.swagger</groupId>
             <artifactId>swagger-annotations</artifactId>
             <version>1.5.13</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.1.10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.38</version>
+            <scope>runtime</scope>
         </dependency>
 
     </dependencies>

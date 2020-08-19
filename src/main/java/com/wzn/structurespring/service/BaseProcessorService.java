@@ -34,19 +34,11 @@ public abstract class BaseProcessorService {
         log.info("--------------------------" + " 初始化加载： " + config.value() + "--------------------------");
     }
 
-<<<<<<< HEAD
     protected abstract String doValidate();
-=======
-    protected abstract void doValidate();
->>>>>>> parent of 53cae64... 无序公共流程加载
 
     public String handle() {
         if (!isValid) {
-<<<<<<< HEAD
             return configValue + "该service不执行";
-=======
-            System.out.println("该service不执行");
->>>>>>> parent of 53cae64... 无序公共流程加载
         }
         return doValidate();
     }
