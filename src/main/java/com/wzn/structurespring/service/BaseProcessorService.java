@@ -2,6 +2,7 @@ package com.wzn.structurespring.service;
 
 import com.wzn.structurespring.config.ProcessorConfig;
 import com.wzn.structurespring.exception.APIException;
+import com.wzn.structurespring.vo.ResultVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.stereotype.Service;
@@ -31,11 +32,12 @@ public abstract class BaseProcessorService {
         log.info("--------------------------"+" 初始化加载： "+config.value()+"--------------------------");
     }
 
-    protected abstract void doValidate();
+    protected abstract ResultVO<String> doValidate();
 
     public void handle() {
         if (!isValid) {
             System.out.println("该service不执行");
+            return;
         }
         doValidate();
     }

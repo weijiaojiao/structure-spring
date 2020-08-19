@@ -2,6 +2,7 @@ package com.wzn.structurespring.service.imp;
 
 import com.wzn.structurespring.config.ProcessorConfig;
 import com.wzn.structurespring.service.BaseProcessorService;
+import com.wzn.structurespring.vo.ResultVO;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,8 +16,8 @@ import org.springframework.stereotype.Service;
 public class ProcessorServiceFiveImpl extends BaseProcessorService {
 
     @Override
-    protected void doValidate() {
-        System.out.println("ProcessorServiceFiveImpl");
+    protected ResultVO<String> doValidate() {
+        return  new ResultVO<>("ProcessorServiceFiveImpl");
     }
 
 }
