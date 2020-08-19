@@ -38,7 +38,6 @@ public abstract class BaseProcessorService {
 
     public String handle() {
         if (!isValid) {
-            System.out.println("该service不执行");
             return configValue + "该service不执行";
         }
         return doValidate();
