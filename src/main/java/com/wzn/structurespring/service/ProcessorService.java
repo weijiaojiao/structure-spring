@@ -3,6 +3,9 @@ package com.wzn.structurespring.service;
 import com.wzn.structurespring.config.ProcessorManager;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author wei zhenning
  * @version 1.0
@@ -17,8 +20,10 @@ public class ProcessorService extends ProcessorManager<BaseProcessorService> {
         return BaseProcessorService.class;
     }
 
-    public void start() {
-        processors.stream().forEach(service -> service.handle());
+    public List<String> start() {
+        List<String> list = new ArrayList<>();
+        processors.forEach(service -> list.add(service.handle()));
+        return list;
     }
 
 }

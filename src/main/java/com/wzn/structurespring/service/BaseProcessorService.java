@@ -2,7 +2,6 @@ package com.wzn.structurespring.service;
 
 import com.wzn.structurespring.config.ProcessorConfig;
 import com.wzn.structurespring.exception.APIException;
-import com.wzn.structurespring.vo.ResultVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.stereotype.Service;
@@ -19,6 +18,8 @@ public abstract class BaseProcessorService {
 
     private boolean isValid;
 
+    private String configValue;
+
     protected BaseProcessorService() {
         ProcessorConfig config = AnnotationUtils.findAnnotation(getClass(), ProcessorConfig.class);
         if (config == null) {
@@ -29,17 +30,18 @@ public abstract class BaseProcessorService {
 
     private void init(ProcessorConfig config) {
         isValid = config.status();
-        log.info("--------------------------"+" 初始化加载： "+config.value()+"--------------------------");
+        configValue = config.value();
+        log.info("--------------------------" + " 初始化加载： " + config.value() + "--------------------------");
     }
 
-    protected abstract ResultVO<String> doValidate();
+    protected abstract String doValidate();
 
-    public void handle() {
+    public String handle() {
         if (!isValid) {
             System.out.println("该service不执行");
-            return;
+            return configValue + "该service不执行";
         }
-        doValidate();
+        return doValidate();
     }
 
 }

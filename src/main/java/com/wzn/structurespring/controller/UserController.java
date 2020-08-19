@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * @author wei zhenning
@@ -43,8 +44,8 @@ public class UserController {
      * 通用流程处理
      */
     @PostMapping("/start")
-    public void start(){
-        processorService.start();
+    public ResultVO start(){
+        return new ResultVO(processorService.start());
     }
 
 }
